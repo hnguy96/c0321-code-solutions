@@ -8,7 +8,7 @@ button:hover {
   color: rgb(224, 224, 224);
 }
 
-.title:first-child {
+.title {
   background-color: rgb(44, 44, 44);
   color: rgb(236, 236, 236);
 }
