@@ -18,7 +18,7 @@
   /* your code here */
   position: absolute;
   top: 10px;
-  left: 240px;
+  right: 10px;
 }
 
 .joke {
@@ -32,13 +32,16 @@
 
   /* your code here */
   position: absolute;
-  top: 160px;
+  bottom: 8px;
 }
 
 .overlay {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
 
   /* your code here */
-  width: 300px;
-  height: 300px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
 }
