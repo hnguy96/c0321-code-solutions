@@ -1,4 +1,4 @@
-body {
+* {
   box-sizing: border-box;
 }
 
@@ -12,6 +12,10 @@ body {
   display: flex;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.column-full {
+  flex-basis: 100%;
 }
 
 .column-one-third {
