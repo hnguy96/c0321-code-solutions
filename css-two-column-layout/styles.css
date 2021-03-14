@@ -12,8 +12,9 @@ body {
 
 h1 {
   font-weight: 700;
-  font-size: 3.5rem;
-  margin: 1.5rem 0;
+  font-size: 3.2rem;
+  margin: 1.4rem 0;
+  letter-spacing: 0.2rem;
 }
 
 h1,
@@ -23,8 +24,8 @@ button {
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin-top: 2.5rem;
+  font-size: 1.4rem;
+  margin-top: 2.8rem;
   margin-bottom: 1rem;
 }
 
@@ -39,7 +40,7 @@ p {
 }
 
 .heading-container {
-  margin: 3rem 10rem;
+  margin: 2rem 10rem;
 }
 
 .row {
@@ -50,16 +51,11 @@ p {
 .column {
   flex-basis: 50%;
   display: flex;
-  padding: 0 2.5rem;
+  padding: 2rem;
 }
 
 .logo-container {
   padding-right: 0.4rem;
-}
-
-img {
-  width: 120px;
-  height: 120px;
 }
 
 .button-container {
@@ -70,7 +66,9 @@ button {
   background-color: white;
   border: 3px solid rgb(223, 145, 0);
   color: rgb(223, 145, 0);
-  font-size: 1rem;
-  padding: 0.5rem 2.8rem;
+  font-size: 0.9rem;
+  padding: 0.6rem 2.7rem;
   font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
 }
