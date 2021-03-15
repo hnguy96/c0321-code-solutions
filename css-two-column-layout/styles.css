@@ -40,7 +40,8 @@ p {
 }
 
 .heading-container {
-  margin: 2rem 10rem;
+  max-width: 700px;
+  margin: auto;
 }
 
 .row {
