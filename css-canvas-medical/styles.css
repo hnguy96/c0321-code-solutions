@@ -8,8 +8,7 @@ body {
   font-family: 'Avenir', sans-serif;
 }
 
-h1,
-.logo {
+h1 {
   font-family: 'Tiempos Headline', serif;
 }
 
@@ -46,23 +45,20 @@ button,
 
 div.header {
   display: flex;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   max-width: 1450px;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
 }
 
 .row-half {
   flex-basis: 50%;
 }
 
-.logo {
+.logo img {
   margin: 0;
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
-  text-transform: lowercase;
-  font-weight: 300;
-  color: #294464;
+  width: 160px;
 }
 
 .links {
@@ -118,9 +114,8 @@ div.header {
   font-size: 3rem;
 }
 
-.hero-text-container p,
-.main-section p {
-  line-height: 2.2rem;
+.hero-text-container p {
+  line-height: 2.3rem;
 }
 
 .hero-text-container button {
@@ -132,6 +127,7 @@ div.header {
   flex-direction: column;
   justify-content: center;
   height: 35rem;
+  border-bottom: 1px solid rgb(224, 224, 224);
 }
 
 .locations {
@@ -145,6 +141,10 @@ div.header {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;
+}
+
+.main-section p {
+  line-height: 2rem;
 }
 
 .locations,
@@ -178,8 +178,8 @@ div.header {
   flex-basis: 50%;
 }
 
-.more-info-section h1 {
-  margin-bottom: 2.5rem;
+.more-info-section .logo {
+  margin-bottom: 4rem;
 }
 
 .more-info-section p,
