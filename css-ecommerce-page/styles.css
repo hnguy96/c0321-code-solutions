@@ -7,8 +7,16 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-size: 2.2rem;
+}
+
+span {
+  font-size: 1.2rem;
+}
+
 .container {
-  max-width: 1500px;
+  max-width: 1700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -17,6 +25,10 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.column {
+  margin: 1rem;
 }
 
 .column-one-fifth {
@@ -28,5 +40,29 @@ body {
 .column-one-fifth > img {
   object-fit: cover;
   width: 100%;
-  height: 410px;
+  height: 450px;
+}
+
+.description-container,
+.price-container {
+  margin-top: 1rem;
+}
+
+.size,
+.retail-price,
+.separator {
+  color: rgb(212, 212, 212);
+}
+
+.separator {
+  border-right: 2px solid;
+  margin: 0 0.5rem;
+}
+
+.retail-price {
+  text-decoration: line-through;
+}
+
+.price {
+  background-color: rgb(253, 240, 229);
 }
