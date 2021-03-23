@@ -3,11 +3,11 @@ var $modalContainer = document.querySelector('.modal-container');
 var $noBtn = document.querySelector('.no-btn');
 
 function showModal(event) {
-  $modalContainer.classList.replace('hidden', 'show');
+  $modalContainer.classList.remove('hidden');
 }
 
 function hideModal(event) {
-  $modalContainer.classList.replace('show', 'hidden');
+  $modalContainer.classList.add('hidden');
 }
 
 $openModalBtn.addEventListener('click', showModal);
