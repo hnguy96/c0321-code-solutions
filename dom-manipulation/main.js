@@ -23,5 +23,7 @@ function buttonTemp() {
   }
 }
 
-$hotButton.addEventListener('click', clickCounter);
-$hotButton.addEventListener('click', buttonTemp);
+$hotButton.addEventListener('click', function () {
+  clickCounter();
+  buttonTemp();
+});
