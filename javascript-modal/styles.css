@@ -63,10 +63,6 @@ button {
   text-transform: uppercase;
 }
 
-.show {
-  visibility: visible;
-}
-
 .hidden {
-  visibility: hidden;
+  display: none;
 }
