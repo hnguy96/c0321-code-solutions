@@ -15,13 +15,15 @@ body {
 }
 
 span {
+  margin: 0 0.3rem;
+  font-size: 3rem;
   border-bottom: 5px solid black;
 }
 
-.word {
-  margin: 0 1rem;
+.correct {
+  color: green;
 }
 
-.word span {
-  font-size: 3rem;
+.incorrect {
+  color: red;
 }
