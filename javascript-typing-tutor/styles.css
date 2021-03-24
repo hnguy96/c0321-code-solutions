@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier Prime', monospace;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  border-bottom: 5px solid black;
+}
+
+.word {
+  margin: 0 1rem;
+}
+
+.word span {
+  font-size: 3rem;
+}
