@@ -1,13 +1,14 @@
-var $letter = document.querySelector('span');
+var $letters = document.querySelectorAll('.letter');
+var index = 0;
 
-function getLetter(event) {
-  for (var i = 0; i < $letter.length; i++) {
-    switch (event.key) {
-      case 'g': $letter.classList.add('correct');
-        break;
-      default: $letter.classList.add('incorrect');
-    }
+$letters[index].classList.add('underline');
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === $letters[index].textContent) {
+    $letters[index].className = 'correct';
+    index++;
+  } else {
+    $letters[index].className = 'incorrect';
   }
-}
-
-$letter.addEventListener('keydown', getLetter);
+  $letters[index].classList.add('underline');
+});
