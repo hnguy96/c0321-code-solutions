@@ -15,7 +15,6 @@ body {
 }
 
 span {
-  margin: 0;
   font-size: 3rem;
 }
 
@@ -30,4 +29,8 @@ span {
 .underline {
   margin-top: 0.3rem;
   border-bottom: 5px solid black;
+}
+
+.underline-incorrect {
+  border-bottom: 5px solid red;
 }
