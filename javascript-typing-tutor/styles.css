@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier Prime', monospace;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 3rem;
+  height: 3.8rem;
+}
+
+.correct {
+  color: green;
+}
+
+.underline {
+  border-bottom: 5px solid black;
+}
+
+.incorrect {
+  color: red;
+  border-bottom: 5px solid red;
+}
