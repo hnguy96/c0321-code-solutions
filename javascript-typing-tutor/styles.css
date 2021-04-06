@@ -16,21 +16,18 @@ body {
 
 span {
   font-size: 3rem;
+  height: 3.8rem;
 }
 
 .correct {
   color: green;
 }
 
-.incorrect {
-  color: red;
-}
-
 .underline {
-  margin-top: 0.3rem;
   border-bottom: 5px solid black;
 }
 
-.underline-incorrect {
+.incorrect {
+  color: red;
   border-bottom: 5px solid red;
 }
