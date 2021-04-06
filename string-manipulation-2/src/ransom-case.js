@@ -1,7 +1,4 @@
 /* exported ransomCase */
-// assign a new word var
-// loop through string
-// capitalize every even word
 function ransomCase(string) {
   var newStr = '';
   for (var i = 0; i < string.length; i++) {
