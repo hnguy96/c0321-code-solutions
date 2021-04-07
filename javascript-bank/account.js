@@ -23,8 +23,17 @@ Account.prototype.withdraw = function (amount) {
   return false;
 };
 
-// Account.prototype.getBalance = function(){
-//   if (this.transactions) {
-//     return this.transactionDeposit - this.transactionWithdrawal;
-//   }
-// }
+Account.prototype.getBalance = function () {
+  var totalBalance = 0;
+  if (this.transactions.length === 0) {
+    return 0;
+  }
+  for (var i = 0; i < this.transactions.length; i++) {
+    if (this.transactions[i].type === 'deposit') {
+      totalBalance += this.transactions[i].amount;
+    } else {
+      totalBalance -= this.transactions[i].amount;
+    }
+  }
+  return totalBalance;
+};
