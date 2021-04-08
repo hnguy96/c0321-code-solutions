@@ -1,19 +1,15 @@
 var $heading = document.querySelector('h1');
-
-function countdown() {
-  window.setInterval(changeText, 2000);
-}
+var timerID = null;
+var countdown = 4;
 
 function changeText() {
-  if ($heading.textContent === '4') {
-    $heading.textContent = '3';
-  } else if ($heading.textContent === '3') {
-    $heading.textContent = '2';
-  } else if ($heading.textContent === '2') {
-    $heading.textContent = '1';
-  } else if ($heading.textContent === '1') {
-    $heading.textContent = 'Earth Beeeelooowww Us~';
+  countdown--;
+  if (countdown >= 1) {
+    $heading.textContent = countdown;
+  } else {
+    $heading.textContent = '~Earth Beeeelooowww Us~';
+    clearInterval(timerID);
   }
 }
 
-countdown();
+timerID = setInterval(changeText, 2000);
