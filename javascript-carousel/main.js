@@ -1,10 +1,15 @@
 var $images = document.querySelectorAll('img');
-var $nextIcon = document.querySelector('.fa-chevron-right');
-var $prevIcon = document.querySelector('.fa-chevron-left');
+var $nextBtn = document.querySelector('.fa-chevron-right');
+var $prevBtn = document.querySelector('.fa-chevron-left');
+var $circleNav = document.querySelector('.circle-icon-wrapper');
+// console.log('circlenav', $circleNav);
+var timerId = null;
 
-setInterval(showNextImage, 3000);
+// setInterval(selectCircleNav, 3000);
+timerId = setInterval(showNextImage, 3000);
 
 function showNextImage(event) {
+  clearInterval(timerId);
   for (var i = 0; i < $images.length; i++) {
     if (!$images[i].className && $images[i] !== $images[$images.length - 1]) {
       $images[i].className = 'hidden';
@@ -16,6 +21,8 @@ function showNextImage(event) {
     }
 
   }
+  timerId = setInterval(showNextImage, 3000);
+  // selectCircleNav('next');
 }
 
 function showPrevImage(event) {
@@ -29,7 +36,19 @@ function showPrevImage(event) {
       $images[$images.length - 1].classList.remove('hidden');
     }
   }
+  // selectCircleNav('prev');
 }
 
-$nextIcon.addEventListener('click', showNextImage);
-$prevIcon.addEventListener('click', showPrevImage);
+// function selectCircleNav(change) {
+//   if (change === 'next') {
+//     for (var i = 0; i < $circleNav.length; i++) {
+//       if ($images[i] !== $images[$images.length - 1]) {
+//         $circleNav[i + 1].className = 'far fa-circle';
+//         break;
+//       }
+//     }
+//   }
+// }
+
+$nextBtn.addEventListener('click', showNextImage);
+$prevBtn.addEventListener('click', showPrevImage);
