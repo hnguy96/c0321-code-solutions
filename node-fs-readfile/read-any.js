@@ -1,5 +1,7 @@
-// const fs = require('read-dijkstra.js');
+const fs = require('fs');
+const txtFile = process.argv[2];
 
-// fs.readFile(process.argv[0], function () {
-//   console.log(process.argv[2]);
-// });
+fs.readFile(txtFile, 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
