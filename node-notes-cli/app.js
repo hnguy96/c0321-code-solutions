@@ -1,22 +1,14 @@
-const fs = require('fs');
+// const fs = require('fs');
+const readItem = require('./readItem');
+const createItem = require('./createItem');
+const deleteItem = require('./deleteItem');
+const updateItem = require('./updateItem');
 const feature = process.argv[2];
-const newNote = process.argv[3];
+const inputedItem1 = process.argv[3];
+const inputedItem2 = process.argv[4];
 
-fs.readFile('./data.json', 'utf8', (err, data) => {
-  if (err) throw err;
-  data = JSON.parse(data);
-  const { notes, nextId } = data;
-  if (feature === 'read') {
-    for (const i in notes) {
-      console.log(`${i}: ${notes[i]}`);
-    }
-  }
-  if (feature === 'create') {
-    notes[nextId] = newNote;
-    data.nextId++;
-    data = JSON.stringify(data, null, 2);
-    fs.writeFile('./data.json', data, 'utf8', err => {
-      if (err) throw err;
-    });
-  }
-});
+if (feature === 'read') readItem(inputedItem1);
+else if (feature === 'create') createItem(inputedItem1);
+else if (feature === 'delete') deleteItem(inputedItem1);
+else if (feature === 'update') updateItem(inputedItem1, inputedItem2);
+else console.log('invalid, please input read, create, delete, or update');
