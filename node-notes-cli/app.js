@@ -1,4 +1,3 @@
-// const fs = require('fs');
 const readItem = require('./readItem');
 const createItem = require('./createItem');
 const deleteItem = require('./deleteItem');
