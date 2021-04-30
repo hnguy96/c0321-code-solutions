@@ -5,11 +5,7 @@ const deleteItem = inputedItem1 => {
     if (err) throw err;
     data = JSON.parse(data);
     const { notes } = data;
-    for (const i in notes) {
-      if (i === inputedItem1) {
-        delete notes[i];
-      }
-    }
+    delete notes[inputedItem1];
     data = JSON.stringify(data, null, 2);
     fs.writeFile('./data.json', data, 'utf8', err => {
       if (err) throw err;
