@@ -2,10 +2,8 @@ var $images = document.querySelectorAll('img');
 var $nextBtn = document.querySelector('.fa-chevron-right');
 var $prevBtn = document.querySelector('.fa-chevron-left');
 var $circleNav = document.querySelector('.circle-icon-wrapper');
-// console.log('circlenav', $circleNav);
 var timerId = null;
 
-// setInterval(selectCircleNav, 3000);
 timerId = setInterval(showNextImage, 3000);
 
 function showNextImage(event) {
@@ -14,15 +12,17 @@ function showNextImage(event) {
     if (!$images[i].className && $images[i] !== $images[$images.length - 1]) {
       $images[i].className = 'hidden';
       $images[i + 1].classList.remove('hidden');
+      $circleNav.children[i].className = 'far fa-circle';
+      $circleNav.children[i + 1].className = 'fas fa-circle';
       break;
     } else if ($images[i] === $images[$images.length - 1]) {
       $images[i].className = 'hidden';
       $images[0].classList.remove('hidden');
+      $circleNav.children[i].className = 'far fa-circle';
+      $circleNav.children[0].className = 'fas fa-circle';
     }
-
   }
   timerId = setInterval(showNextImage, 3000);
-  // selectCircleNav('next');
 }
 
 function showPrevImage(event) {
@@ -30,25 +30,17 @@ function showPrevImage(event) {
     if (!$images[i].className && $images[i] !== $images[0]) {
       $images[i].className = 'hidden';
       $images[i - 1].classList.remove('hidden');
+      $circleNav.children[i].className = 'far fa-circle';
+      $circleNav.children[i - 1].className = 'fas fa-circle';
       break;
     } else if ($images[i] === $images[0]) {
       $images[i].className = 'hidden';
       $images[$images.length - 1].classList.remove('hidden');
+      $circleNav.children[i].className = 'far fa-circle';
+      $circleNav.children[$circleNav.children.length - 1].className = 'fas fa-circle';
     }
   }
-  // selectCircleNav('prev');
 }
-
-// function selectCircleNav(change) {
-//   if (change === 'next') {
-//     for (var i = 0; i < $circleNav.length; i++) {
-//       if ($images[i] !== $images[$images.length - 1]) {
-//         $circleNav[i + 1].className = 'far fa-circle';
-//         break;
-//       }
-//     }
-//   }
-// }
 
 $nextBtn.addEventListener('click', showNextImage);
 $prevBtn.addEventListener('click', showPrevImage);
