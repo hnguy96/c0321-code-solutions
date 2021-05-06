@@ -1,6 +1,6 @@
 const express = require('express');
 const fs = require('fs');
-const hi = require('./data.json');
+// const json = require('./data.json');
 const app = express();
 const jsonMiddleware = express.json();
 
@@ -52,7 +52,7 @@ app.delete('/api/notes/:id', (req, res) => {
   fs.readFile('./data.json', 'utf8', (err, data) => {
     data = JSON.parse(data);
     const { notes } = data;
-    console.log(notes);
+    // console.log(notes);
     if (err) res.status(500).json({ error: 'An unexpected error occurred.' });
     else if (id < 0) {
       res.status(400).json({ error: 'id must be a positive integer' });
@@ -60,7 +60,7 @@ app.delete('/api/notes/:id', (req, res) => {
       for (const i in notes) {
         if (notes[i].id === id) {
         // delete notes[i];
-          console.log(notes[i]);
+          // console.log(notes[i]);
           res.status(204).json(req.body);
         }
         // else {
