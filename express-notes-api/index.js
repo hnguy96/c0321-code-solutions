@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const hi = require('./data.json');
 const app = express();
 const jsonMiddleware = express.json();
 
@@ -47,21 +48,39 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
+  const id = parseInt(req.params.id, 10);
   fs.readFile('./data.json', 'utf8', (err, data) => {
     data = JSON.parse(data);
     const { notes } = data;
+    console.log(notes);
     if (err) res.status(500).json({ error: 'An unexpected error occurred.' });
-    else {
-      if (req.params.id < 0) res.status(400).json({ error: 'id must be a positive integer' });
-      else {
-        for (const i in notes) {
-          if (notes[i].id.toString() === req.params.id) res.status(204).json(req.body);
-          else {
-            res.status(404).json({ error: `cannot find note with id ${req.params.id}` });
-            return;
-          }
+    else if (id < 0) {
+      res.status(400).json({ error: 'id must be a positive integer' });
+    } else {
+      for (const i in notes) {
+        if (notes[i].id === id) {
+        // delete notes[i];
+          console.log(notes[i]);
+          res.status(204).json(req.body);
         }
+        // else {
+        //       res.status(404).json({ error: `cannot find note with id ${id}` });
+        //       return;
+        //     }
+        //   }
       }
     }
   });
 });
+
+// app.put('/api/notes/:id', (req, res) => {
+//   fs.readFile('./data.json', 'utf8', (err, data) => {
+//     data = JSON.parse(data);
+//     // const { notes } = data;
+//     if (err) res.status(500).json({ error: 'An unexpected error occurred.' });
+//     else {
+//       if (req.params.id < 0) res.status(400).json({ error: 'id must be a positive integer' });
+//       else if (!req.body.content) res.status(400).json({ error: 'content is a required field' });
+//     }
+//   });
+// });
