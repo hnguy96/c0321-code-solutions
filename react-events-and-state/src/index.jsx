@@ -29,6 +29,6 @@ class CustomButton extends React.Component {
 }
 
 ReactDOM.render(
-  <CustomButton text="click me"/>,
+  <CustomButton />,
   document.getElementById('root')
 );
