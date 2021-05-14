@@ -1,0 +1,30 @@
+button {
+  color: white;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.darkPurple {
+  background-color: rgb(70, 0, 70);
+}
+
+.purple {
+  background-color: rgb(126, 0, 126);
+}
+
+.red {
+  background-color: rgb(185, 9, 47);
+}
+
+.orange {
+  background-color: rgb(241, 129, 0);
+}
+
+.yellow {
+  background-color: rgb(231, 229, 83);
+}
+
+.grey {
+  background-color: rgb(199, 199, 199);
+}
