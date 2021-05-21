@@ -37,20 +37,22 @@ app.post('/api/auth/sign-up', (req, res, next) => {
    *
    * Hint: Insert statements can include a `returning` clause to retrieve the insterted row(s).
    */
-  const hashedPassword = argon2.hash(password);
-
-  const sql = `
-    insert into "users" ("username", "hashedPassword")
-    values ($1, $2)
-    returning *
-  `;
-  const params = [username, hashedPassword];
-  db.query(sql, params)
-    .then(result => {
+  argon2
+    .hash(password)
+    .then(hashedPassword => {
+      const sql = `
+        insert into "users" ("username", "hashedPassword")
+        values ($1, $2)
+        returning *
+      `;
+      const params = [username, hashedPassword];
       if (!username || !password) {
         throw new ClientError(400, 'username and password are required fields');
       }
-      const user = result.rows[0].username;
+      return db.query(sql, params);
+    })
+    .then(result => {
+      const [user] = result.rows;
       res.status(201).json(user);
     })
     .catch(err => next(err));
