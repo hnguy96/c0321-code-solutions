@@ -19,11 +19,9 @@ export default class App extends React.Component {
      * Each time the window.location.hash changes, parse
      * it with the parseRoute() function and update state
      */
-    const initialLocationHash = window.location.hash;
     window.addEventListener('hashchange', () => {
-      if (initialLocationHash !== window.location.hash || !initialLocationHash) {
-        this.setState({ route: parseRoute(window.location.hash) });
-      }
+      const route = parseRoute(window.location.hash);
+      this.setState({ route });
     });
   }
 
