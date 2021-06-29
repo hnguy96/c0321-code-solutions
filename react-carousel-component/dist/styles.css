@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.carousel {
+  position: relative;
+  height: 100vh;
+  margin: auto;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.pokemon {
+  width: 90%;
+  object-fit: contain;
+}
+
+.controls {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls i {
+  margin: 1rem;
+}

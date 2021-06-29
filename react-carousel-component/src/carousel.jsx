@@ -6,11 +6,11 @@ import Indicators from './indicators';
 export default class Carousel extends Component {
   render() {
     return (
-      <>
+      <div className="carousel">
         <Images />
         <Controls />
         <Indicators />
-      </>
+      </div>
     );
   }
 }

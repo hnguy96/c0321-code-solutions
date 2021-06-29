@@ -6,7 +6,7 @@ export default function Images() {
     return <img key={num} src={`../dist/images/${num}.png`} className="pokemon" />;
   });
   return (
-    <div className="images">
+    <div className="images center">
       {images}
     </div>
   );
