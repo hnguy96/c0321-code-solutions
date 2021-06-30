@@ -7,8 +7,6 @@ body {
 }
 
 .carousel {
-  position: relative;
-  height: 100vh;
   margin: auto;
 }
 
@@ -17,23 +15,37 @@ body {
   justify-content: center;
   align-items: center;
   height: 700px;
+  position: relative;
 }
 
 .pokemon {
-  width: 90%;
+  width: 50%;
   object-fit: contain;
+}
+
+.controls,
+.indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  margin: auto;
 }
 
 .controls {
   font-size: 3rem;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
+  top: 0;
+  width: 85%;
   justify-content: space-between;
   align-items: center;
 }
 
-.controls i {
-  margin: 1rem;
+.indicators {
+  position: absolute;
+  justify-content: center;
+}
+
+.indicators i {
+  margin: 0 0.4rem;
 }
